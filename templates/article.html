@@ -35,6 +35,13 @@
                 </header>
             </section>
             {{ article.content }}
+
+            <h2><a href="{{ SITEURL }}/pages/all-images.html#{{ article.album }}">{{ article.album }}</a></h2>
+            
+            {% for image in article.galleryimages %}
+            <a class="{{ article.album }} cboxElement" href="{{ SITEURL }}/images/thumbnails/opt/{{ image }}"><img src="{{ SITEURL }}/images/thumbnails/small/{{ image }}"></a>
+            {% endfor %}
+            
             <a href="#" class="go-top">Go Top</a>
             {% include 'disqus.html' %}
             {% include 'footer.html' %}
